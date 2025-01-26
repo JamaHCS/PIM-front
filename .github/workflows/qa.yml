@@ -38,3 +38,4 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD_DEV }}
         local-dir: ./dist/pim/
         dangerous-clean-slate: true
+        
