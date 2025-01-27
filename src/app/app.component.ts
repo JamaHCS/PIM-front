@@ -9,7 +9,6 @@ import { GlobalService } from './core/services/global/global.service';
   selector: 'app-root',
   imports: [RouterOutlet, ButtonModule, ProgressBarModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
   public loading: boolean = false;
