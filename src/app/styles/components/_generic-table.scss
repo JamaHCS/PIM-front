@@ -1,0 +1,289 @@
+@use './../global/variables'as vars;
+@use "sass:color";
+
+.generic-table-container {
+  .p-datatable {
+    .p-datatable-header {
+      padding: 0.5rem 0;
+
+      .global-filter-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 0.5rem;
+
+        .global-filter {
+          min-width: 33vw;
+          height: 42px;
+        }
+      }
+    }
+
+    .p-datatable-wrapper {
+      min-height: 500px;
+
+      table {
+        tr.filter-row {
+          th {
+            padding: 0;
+            overflow: visible;
+
+            &>div {
+              .p-multiselect {
+                background: transparent;
+                border: none;
+                height: 40px;
+
+                .p-multiselect-label-container {
+                  display: flex;
+                  align-items: center;
+                }
+
+                .p-multiselect-label {
+                  padding: 0 1rem;
+                }
+              }
+            }
+          }
+        }
+
+        th {
+          background-color: #222222;
+          transition: 200ms;
+
+          &:hover {
+            background-color: color.scale(#222222, $lightness: 5%);
+            ;
+          }
+
+          .th-content {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: nowrap;
+
+            .p-sortable-column-icon {
+              margin-left: 0;
+              margin-top: -2px;
+              color: vars.$color-highlight;
+            }
+
+            .label-header {
+              word-break: keep-all;
+              text-transform: uppercase;
+              font-weight: 500;
+              color: white;
+              white-space: nowrap;
+            }
+          }
+        }
+
+        th,
+        td {
+          min-width: 4rem;
+          max-width: 10rem;
+          padding: 0.5rem;
+        }
+
+        th {
+          word-break: keep-all;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        tbody {
+          tr {
+            border-top: 1px solid #464646;
+
+            td {
+              height: 50px;
+
+              .td-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+
+              .ellipsis-overflow {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
+              }
+
+              .actions {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                justify-content: center;
+              }
+
+              &.selected-field.selected-id {
+                border-bottom: 3px solid vars.$color-highlight;
+              }
+
+              &.expanded-container {
+                padding: 1rem 8px;
+
+                .expanded-content {
+                  font-family: monospace;
+                  position: relative;
+                  display: flex;
+                  justify-content: space-between;
+
+                  .expanded-text {
+                    word-break: break-all;
+                    white-space: wrap;
+                  }
+
+                  .expanded-actions {
+                    display: flex;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 8px;
+                    padding-left: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .p-paginator {
+      background-color: transparent;
+    }
+  }
+}
+
+.light-theme {
+  .generic-table-container {
+    .p-datatable {
+      table {
+        th {
+          background-color: #fff;
+
+          &:hover {
+            background-color: color.scale(#ffffff, $lightness: -5%);
+          }
+
+          .th-content {
+            .label-header {
+              color: black;
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            border-top: 1px solid #e4e4e4;
+
+            td {
+              &:hover {
+                background: rgba(0, 0, 0, 0.1);
+              }
+
+              &.selected-field {
+                background: rgba(0, 0, 0, 0.1);
+              }
+
+              &.expanded-container {
+                background: rgba(0, 0, 0, 0.15);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .p-datatable.non-expandable-table {
+      tbody {
+        tr {
+          td {
+            &:hover {
+              background: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.dark-theme {
+  .generic-table-container {
+    .p-datatable {
+      table {
+        th {
+          background-color: #222222;
+
+          &:hover {
+            background-color: color.scale(#222222, $lightness: 5%);
+          }
+
+          .th-content {
+            .label-header {
+              color: white;
+            }
+          }
+        }
+
+        tbody {
+          td {
+            &:hover {
+              background: rgba(255, 255, 255, 0.1);
+            }
+
+            &.selected-field {
+              background: rgba(255, 255, 255, 0.1);
+            }
+
+            &.expanded-container {
+              background: rgba(255, 255, 255, 0.15);
+            }
+          }
+        }
+      }
+    }
+
+    .p-datatable.non-expandable-table {
+      tbody {
+        tr {
+          td {
+            &:hover {
+              background: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.p-speeddial-direction-left {
+  right: 0;
+}
+
+
+.number-long {
+  width: 240px !important;
+  max-width: 240px !important
+}
+
+span.total-rows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.non-wrappeable {
+  white-space: nowrap;
+}
+
+.wrappeable {
+  white-space: unset;
+}

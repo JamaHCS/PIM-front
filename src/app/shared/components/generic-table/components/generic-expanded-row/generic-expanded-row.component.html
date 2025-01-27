@@ -1,0 +1,13 @@
+<div class="expanded-content">
+  <div class="expanded-text" [innerHTML]="data | highlightSearch: globalFilterValue"></div>
+  <div class="expanded-actions">
+    <p-button
+      icon="pi pi-copy"
+      severity="info"
+      styleClass="icon-button"
+      pTooltip="Copy content"
+      tooltipPosition="left"
+      (click)="copyAction()"></p-button>
+  </div>
+</div>
+<p-toast />

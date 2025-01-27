@@ -1,6 +1,63 @@
 import { Translation } from 'primeng/api';
 
 export const Global = {
+  /**
+   * @property {object} patterns
+   * Contains reusable regular expression patterns for validation purposes.
+   */
+  patterns: {
+    /**
+     * @property {RegExp} url
+     * A regular expression pattern to validate URLs.
+     *
+     * - Matches valid HTTP(S) URLs.
+     * - Supports domain names with subdomains.
+     * - Allows optional ports.
+     * - Permits optional query parameters and path segments.
+     *
+     * Example of valid URLs:
+     * - `https://example.com`
+     * - `http://sub.example.com:8080/path?query=123`
+     * - `https://example.com/path/to/resource`
+     */
+    url: /^(https?):\/\/(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}(?::(?:0|[1-9]\d{0,3}|[1-5]\d{4}|6[0-4]\d{3}|65[0-4]\d{2}|655[0-2]\d|6553[0-5]))?(?:\/(?:[-a-zA-Z0-9@%_+.~#?&=]+\/?)*)?$/,
+
+    /**
+     * @property {RegExp} specialCharacters
+     * A regular expression pattern to validate strings containing alphanumeric characters
+     * and a subset of special characters (`-`, `.`, `[`, `]`, `_`, space, `/`, `\`, `:`, `=`, `&`, `?`, `;`, `+`).
+     *
+     * - Matches strings that contain only allowed characters.
+     *
+     * Example of valid inputs:
+     * - `example-123`
+     * - `file.name[0]`
+     * - `array[5]`
+     * - `example_name`
+     * - `example name`
+     * - `path/to/resource`
+     * - `file\path`
+     * - `key:value`
+     * - `param=value`
+     * - `name&value`
+     * - `search?query=test`
+     * - `Endpoint=sb://example.servicebus.windows.net/;SharedAccessKeyName=KeyName;SharedAccessKey=Key+Value=`
+     */
+    specialCharacters: /^[a-zA-Z0-9\-\.\[\]_ /\\:=&?;+]+$/,
+
+    /**
+     * @property {RegExp} date
+     * A regular expression pattern to validate ISO 8601 date strings.
+     *
+     * - Matches strings formatted as `YYYY-MM-DD` or `YYYY-MM-DDThh:mm:ss.sssZ`.
+     *
+     * Example of valid inputs:
+     * - `2023-01-06`
+     * - `2023-01-06T12:00:00Z`
+     * - `2023-01-06T12:00:00+01:00`
+     */
+    date: /^\d{4}-\d{2}-\d{2}(T.*)?$/,
+  },
   translations: {
     startsWith: 'Empieza con',
     contains: 'Contiene',
