@@ -1,7 +1,8 @@
-@use "./global/fonts";
-@use "./global/global";
+@use './global/fonts';
+@use './global/global';
 
-@use "./pages/generic-page";
+@use './pages/generic-page';
+@use './pages//login';
 
 @use './components/generic-table';
 @use './components/generic-caption';

@@ -18,6 +18,10 @@ export const appConfig: ApplicationConfig = {
       ripple: true,
       theme: {
         preset: pimTheme,
+        options: {
+          darkModeSelector: '.dark-theme',
+          lightModeSelector: '.light-theme',
+        },
       },
       translation: Global.translations,
     }),

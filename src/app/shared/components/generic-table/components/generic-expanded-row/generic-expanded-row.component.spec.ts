@@ -8,9 +8,8 @@ describe('GenericExpandedRowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GenericExpandedRowComponent]
-    })
-    .compileComponents();
+      imports: [GenericExpandedRowComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GenericExpandedRowComponent);
     component = fixture.componentInstance;
