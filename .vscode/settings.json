@@ -3,7 +3,9 @@
         "javascript",
         "typescript",
         "typescriptreact",
-        "html"
+        "html",
+        "sass",
+        "scss"
     ],
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "explicit"
@@ -23,4 +25,18 @@
         },
         "editor.formatOnSave": true
     },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit"
+        },
+        "editor.formatOnSave": true
+    },
+    "[sass]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit"
+        },
+        "editor.formatOnSave": true
+    }
 }

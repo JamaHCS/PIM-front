@@ -8,9 +8,8 @@ describe('GenericGlobalFilterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GenericGlobalFilterComponent]
-    })
-    .compileComponents();
+      imports: [GenericGlobalFilterComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GenericGlobalFilterComponent);
     component = fixture.componentInstance;

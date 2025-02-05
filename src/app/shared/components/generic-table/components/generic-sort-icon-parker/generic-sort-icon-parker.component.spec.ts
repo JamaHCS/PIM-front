@@ -8,9 +8,8 @@ describe('GenericSortIconParkerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GenericSortIconParkerComponent]
-    })
-    .compileComponents();
+      imports: [GenericSortIconParkerComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GenericSortIconParkerComponent);
     component = fixture.componentInstance;

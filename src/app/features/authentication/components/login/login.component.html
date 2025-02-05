@@ -1,0 +1,31 @@
+<div class="login">
+  <div class="login-container">
+    <div class="header">
+      <div class="icon">
+        <figure>
+          <h2>PIM</h2>
+        </figure>
+      </div>
+      <h1>Iniciar sesión en PIM</h1>
+      <p class="text-gray-500">Polizas Jurídicas de México</p>
+    </div>
+
+    <div class="content">
+      <form [formGroup]="form">
+        <div class="input-container">
+          <input type="text" pInputText formControlName="email" placeholder="Email" />
+        </div>
+        <div class="input-container">
+          <p-password formControlName="password" [feedback]="false" placeholder="Password" [toggleMask]="true" />
+        </div>
+        <div class="buttons">
+          <p-button label="Iniciar sesión" [fluid]="true" [disabled]="form.invalid" (click)="login()" />
+        </div>
+      </form>
+    </div>
+
+    <div class="footer">
+      <p><span class="text-gray-500">¿Olvidate tu contraseña?</span>contacta al administrador.</p>
+    </div>
+  </div>
+</div>

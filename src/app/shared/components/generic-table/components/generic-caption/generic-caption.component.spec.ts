@@ -8,9 +8,8 @@ describe('GenericCaptionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [GenericCaptionComponent]
-    })
-    .compileComponents();
+      imports: [GenericCaptionComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(GenericCaptionComponent);
     component = fixture.componentInstance;
