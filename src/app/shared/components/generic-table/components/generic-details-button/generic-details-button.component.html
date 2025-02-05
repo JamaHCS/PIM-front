@@ -1,0 +1,11 @@
+<p-button icon="pi pi-info" severity="help" styleClass="icon-button" (click)="showDialog()" />
+
+<p-dialog
+  header="Details"
+  [modal]="true"
+  [(visible)]="visible"
+  [maximizable]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }">
+  <pre class="code">{{ data | json }}</pre>
+</p-dialog>

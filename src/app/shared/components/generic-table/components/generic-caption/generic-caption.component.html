@@ -1,0 +1,17 @@
+<div class="generic-caption-container">
+  <div class="left">
+    @if (globalFilterEnabled) {
+      <app-generic-global-filter [control]="globalFilter" (clearFilter)="onClearFilter()"></app-generic-global-filter>
+    }
+  </div>
+
+  <div class="right">
+    <span class="total-rows">Total records: {{ table.value.length }}</span>
+    @if (exportTableEnabled) {
+      <app-generic-export-table
+        [exportName]="exportName"
+        [table]="table"
+        [exportsAvailable]="exportsAvailable"></app-generic-export-table>
+    }
+  </div>
+</div>

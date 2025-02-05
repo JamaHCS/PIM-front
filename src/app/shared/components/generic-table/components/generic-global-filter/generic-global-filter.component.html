@@ -1,0 +1,8 @@
+<div class="global-filter-container">
+  <span class="p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input pInputText type="text" class="global-filter" [formControl]="control" placeholder="Search keyword" />
+  </span>
+
+  <p-button icon="pi pi-filter-slash" label="Clear filter" [link]="true" (click)="onClearFilter()"></p-button>
+</div>

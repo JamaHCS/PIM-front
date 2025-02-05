@@ -1,0 +1,9 @@
+@if (exportsAvailable.length > 0) {
+  <p-menu #menu [model]="items" [popup]="true" appendTo="body" />
+  <p-button
+    label="Export"
+    [outlined]="true"
+    icon="pi pi-file-export"
+    (onClick)="menu.toggle($event)"
+    styleClass="button-raised-parker" />
+}

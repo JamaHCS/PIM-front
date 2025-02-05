@@ -1,0 +1,17 @@
+@use './../global/variables';
+
+.generic-caption-container {
+  display: flex;
+  justify-content: space-between;
+
+  .left,
+  .right {
+    display: flex;
+  }
+
+  .right {
+    &>* {
+      margin-left: 8px;
+    }
+  }
+}
