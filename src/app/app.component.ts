@@ -1,23 +1,33 @@
+import { UserService } from './core/services/user/user.service';
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { debounceTime } from 'rxjs';
 import { GlobalService } from './core/services/global/global.service';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ButtonModule, ProgressBarModule],
+  imports: [RouterOutlet, ButtonModule, ProgressBarModule, ToastModule],
   templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
   public loading: boolean = false;
   public title = 'pim';
 
-  public globalService: GlobalService = inject(GlobalService);
-  public changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
+  private globalService: GlobalService = inject(GlobalService);
+  private userService: UserService = inject(UserService);
+
+  private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   ngOnInit() {
+    this.userService.getMe().subscribe({
+      next: res => {
+        console.log(res);
+      },
+    });
+
     this.globalService
       .onSpinner()
       .pipe(debounceTime(200))

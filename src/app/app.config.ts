@@ -7,10 +7,13 @@ import { Global } from './shared/global/global';
 import { pimTheme } from './shared/global/prime.theme';
 import { spinnerInterceptor } from './core/interceptors/spinner/spinner.interceptor';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { tokenInterceptor } from './core/interceptors/token/token.interceptor';
+import { MessageService } from 'primeng/api';
+import { errorInterceptor } from './core/interceptors/error/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(withInterceptors([spinnerInterceptor])),
+    provideHttpClient(withInterceptors([spinnerInterceptor, tokenInterceptor, errorInterceptor])),
     provideExperimentalZonelessChangeDetection(),
     provideRouter(routes),
     provideAnimationsAsync(),
@@ -29,5 +32,6 @@ export const appConfig: ApplicationConfig = {
       },
       translation: Global.translations,
     }),
+    MessageService,
   ],
 };

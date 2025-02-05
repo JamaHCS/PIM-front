@@ -16,10 +16,10 @@
           <input type="text" pInputText formControlName="email" placeholder="Email" />
         </div>
         <div class="input-container">
-          <p-password formControlName="password" [feedback]="false" placeholder="Password" />
+          <p-password formControlName="password" [feedback]="false" placeholder="Password" [toggleMask]="true" />
         </div>
         <div class="buttons">
-          <p-button label="Iniciar sesión" [fluid]="true" />
+          <p-button label="Iniciar sesión" [fluid]="true" [disabled]="form.invalid" (click)="login()" />
         </div>
       </form>
     </div>
