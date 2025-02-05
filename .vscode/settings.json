@@ -26,7 +26,7 @@
         "editor.formatOnSave": true
     },
     "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode", // Cambiar si usas otro formateador
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.codeActionsOnSave": {
             "source.fixAll.eslint": "explicit"
         },

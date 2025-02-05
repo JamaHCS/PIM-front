@@ -21,6 +21,10 @@ export const appConfig: ApplicationConfig = {
         options: {
           darkModeSelector: '.dark-theme',
           lightModeSelector: '.light-theme',
+          cssLayer: {
+            name: 'primeng',
+            order: 'tailwind-base, primeng, tailwind-utilities',
+          },
         },
       },
       translation: Global.translations,
