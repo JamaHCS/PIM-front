@@ -1,0 +1,21 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+
+@if (userLogged) {
+  <p-menubar [model]="items">
+    <ng-template #start>
+      <div class="icon clickable" [routerLink]="['/']">
+        <figure>
+          <h2>PIM</h2>
+        </figure>
+      </div>
+    </ng-template>
+    <ng-template #end>
+      <p-menu #menu [model]="menuItems" [popup]="true" />
+
+      <span (click)="menu.toggle($event)" class="clickable">
+        {{ userLogged.firstName + ' ' + userLogged.lastName }}
+      </span>
+    </ng-template>
+  </p-menubar>
+}

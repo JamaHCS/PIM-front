@@ -4,7 +4,6 @@ import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
-import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +14,6 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
 
   private fb = inject(FormBuilder);
-  private messageService = inject(MessageService);
 
   private authService = inject(AuthService);
 
@@ -27,10 +25,12 @@ export class LoginComponent implements OnInit {
   }
 
   login = () =>
-    this.authService
-      .login({
-        email: this.form.get('email')?.value,
-        password: this.form.get('password')?.value,
-      })
-      .subscribe();
+    this.form.valid
+      ? this.authService
+          .login({
+            email: this.form.get('email')?.value,
+            password: this.form.get('password')?.value,
+          })
+          .subscribe()
+      : null;
 }

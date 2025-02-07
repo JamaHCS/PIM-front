@@ -13,10 +13,15 @@
     <div class="content">
       <form [formGroup]="form">
         <div class="input-container">
-          <input type="text" pInputText formControlName="email" placeholder="Email" />
+          <input type="text" pInputText formControlName="email" placeholder="Email" (keyup.enter)="login()" />
         </div>
         <div class="input-container">
-          <p-password formControlName="password" [feedback]="false" placeholder="Password" [toggleMask]="true" />
+          <p-password
+            formControlName="password"
+            [feedback]="false"
+            placeholder="Password"
+            [toggleMask]="true"
+            (keyup.enter)="login()" />
         </div>
         <div class="buttons">
           <p-button label="Iniciar sesión" [fluid]="true" [disabled]="form.invalid" (click)="login()" />

@@ -46,6 +46,8 @@ module.exports = tseslint.config(
     files: ['*.spec.ts'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
+      '@angular-eslint/template/click-events-have-key-events': 'off',
+      '@angular-eslint/template/interactive-supports-focus': 'off',
     },
   }
 );
