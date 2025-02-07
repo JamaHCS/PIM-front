@@ -7,4 +7,7 @@ export const routes = {
   users: {
     me: `${environment.api}users/me`,
   },
+  roles: {
+    myPermissions: `${environment.api}roles/by-user/`,
+  },
 };

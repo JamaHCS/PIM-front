@@ -1,4 +1,4 @@
-import { RoleMin } from '../Roles/Roles.DTO';
+import { Role } from '../Roles/Roles.DTO';
 
 export interface UserLogged {
   id: string;
@@ -17,5 +17,5 @@ export interface UserLogged {
   deletedAt: Date | null;
   deleted: boolean;
   phoneNumber: string;
-  roles: RoleMin[];
+  roles: Role[];
 }
