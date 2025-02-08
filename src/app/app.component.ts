@@ -7,6 +7,7 @@ import { GlobalService } from './core/services/global/global.service';
 import { ToastModule } from 'primeng/toast';
 import { AuthService } from './core/services/auth/auth.service';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { RoleService } from './core/services/roles/role.service';
 
 @Component({
   selector: 'app-root',
@@ -19,15 +20,13 @@ export class AppComponent implements OnInit {
 
   private globalService = inject(GlobalService);
   private authService = inject(AuthService);
+  private roleService = inject(RoleService);
 
   private changeDetectorRef: ChangeDetectorRef = inject(ChangeDetectorRef);
 
   ngOnInit() {
-    this.authService.getMe().subscribe({
-      next: res => {
-        console.log(res);
-      },
-    });
+    this.authService.getMe().subscribe();
+    this.roleService.getPermissions().subscribe({ next: res => this.globalService.setPermissions(res.value) });
 
     this.globalService
       .onSpinner()

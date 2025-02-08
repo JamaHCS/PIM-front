@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Permission } from '../../models/Roles/Roles.DTO';
 
 @Injectable({
   providedIn: 'root',
@@ -11,17 +12,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
  * It tracks the total number of ongoing requests and determines whether the loading spinner should be shown or hidden.
  */
 export class GlobalService {
-  /**
-   * @property {number} totalRequest
-   * Tracks the number of ongoing requests. It ensures the spinner remains visible while there are active requests.
-   */
   public totalRequest: number = 0;
 
-  /**
-   * @property {BehaviorSubject<boolean>} loading$
-   * A reactive state that indicates whether the spinner should be visible. Components can subscribe to this to react to changes.
-   */
   public loading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public permissions$: BehaviorSubject<Permission[]> = new BehaviorSubject<Permission[]>([]);
+
+  setPermissions = (permissions: Permission[]) => this.permissions$.next(permissions);
+  getPermissions = (): Observable<Permission[]> => this.permissions$.asObservable();
 
   /**
    * @method showSpinner

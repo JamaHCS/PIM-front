@@ -14,6 +14,8 @@ export const routes: Routes = [
         path: 'auth',
         loadChildren: () => import('./features/authentication/Authentications.routes').then(m => m.AUTH_ROUTES),
       },
+      { path: 'users', component: HomeComponent },
+      { path: 'roles', component: HomeComponent },
       { path: 'home', component: HomeComponent },
     ],
   },

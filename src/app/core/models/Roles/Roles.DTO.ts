@@ -13,4 +13,8 @@ export interface Permission {
   id: string;
   name: string;
   description: string;
+  frontendRoute?: string;
+  order?: string;
+  label?: string;
+  icon?: string;
 }

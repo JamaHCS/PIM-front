@@ -11,6 +11,7 @@ import { tokenInterceptor } from './core/interceptors/token/token.interceptor';
 import { MessageService } from 'primeng/api';
 import { errorInterceptor } from './core/interceptors/error/error.interceptor';
 import { AuthService } from './core/services/auth/auth.service';
+import { GlobalService } from './core/services/global/global.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -35,5 +36,6 @@ export const appConfig: ApplicationConfig = {
     }),
     MessageService,
     AuthService,
+    GlobalService,
   ],
 };
