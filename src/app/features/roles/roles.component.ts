@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-authentication',
-  template: `<router-outlet></router-outlet> `,
+  selector: 'app-roles',
   imports: [RouterOutlet],
+  template: `<router-outlet></router-outlet> `,
 })
-export class AuthenticationComponent {}
+export class RolesComponent {}

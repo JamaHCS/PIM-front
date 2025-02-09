@@ -1,4 +1,4 @@
-@use './../global/variables';
+@use './../global/variables' as *;
 
 body {
   margin: 0;
@@ -6,4 +6,12 @@ body {
 
 .clickable {
   cursor: pointer;
+}
+
+.highlight {
+  background-color: $color-highlight;
+  color: rgb(74, 65, 65);
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
 }

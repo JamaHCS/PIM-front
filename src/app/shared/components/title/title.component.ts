@@ -4,19 +4,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-title',
   imports: [CommonModule],
-  template: `<h3 [ngClass]="{ 'border-active': borderEnabled }">{{ content }}</h3>`,
-  styles: `
-    h3 {
-      font-family: 'dinot';
-      text-transform: uppercase;
-      color: #ffb91d;
-      margin-top: 0;
-      font-size: 1.5rem;
-      padding: 0;
-      margin: 0;
-      font-weight: 900;
-    }
-  `,
+  template: `<h3 [ngClass]="{ 'border-active': borderEnabled }" class="title-generic">{{ content }}</h3>`,
 })
 /**
  * @class TitleComponent

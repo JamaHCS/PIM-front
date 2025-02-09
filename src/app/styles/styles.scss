@@ -1,7 +1,9 @@
 @use 'primeicons/primeicons.css';
+
 @use './global/tailwind';
 @use './global/fonts';
 @use './global/global';
+@use './global/layout';
 
 @use './pages/generic-page';
 @use './pages/login';

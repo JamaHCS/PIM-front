@@ -47,12 +47,6 @@ export class NavbarComponent implements OnInit {
         tabindex: '0',
         command: () => this.router.navigate(['/']),
       },
-      {
-        label: 'Login',
-        icon: 'pi pi-user',
-        tabindex: '99',
-        command: () => this.router.navigate(['/auth/login']),
-      },
     ];
 
     this.menuItems = [
@@ -81,6 +75,8 @@ export class NavbarComponent implements OnInit {
           }));
 
         this.items = [...this.items, ...itemsFromPermission].sort((a, b) => Number(a.tabindex) - Number(b.tabindex));
+
+        this.changeDetectorRef.detectChanges();
       },
     });
 

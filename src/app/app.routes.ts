@@ -14,8 +14,14 @@ export const routes: Routes = [
         path: 'auth',
         loadChildren: () => import('./features/authentication/Authentications.routes').then(m => m.AUTH_ROUTES),
       },
-      { path: 'users', component: HomeComponent },
-      { path: 'roles', component: HomeComponent },
+      {
+        path: 'users',
+        loadChildren: () => import('./features/users/users.routes').then(m => m.USERS_ROUTES),
+      },
+      {
+        path: 'roles',
+        loadChildren: () => import('./features/roles/roles.routes').then(m => m.ROLES_ROUTES),
+      },
       { path: 'home', component: HomeComponent },
     ],
   },

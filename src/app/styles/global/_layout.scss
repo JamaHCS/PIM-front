@@ -1,0 +1,18 @@
+@use './../global/variables' as *;
+
+.app-container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 2rem $padding-desktop;
+
+  // tablets
+  @media (max-width: 1024px) {
+    padding: $padding-tablet;
+  }
+
+  // mobile
+  @media (max-width: 768px) {
+    padding: $padding-mobile;
+  }
+}

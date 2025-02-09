@@ -8,7 +8,9 @@ export const routes = {
     me: `${environment.api}users/me`,
   },
   roles: {
+    roles: `${environment.api}roles/`,
     myPermissions: `${environment.api}roles/by-user/`,
+    updatePermissions: (roleId: string): string => `roles/${roleId}/permissions`,
     permissions: `${environment.api}permissions`,
   },
 };

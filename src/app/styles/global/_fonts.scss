@@ -1,8 +1,18 @@
-@use './../global/variables';
+@use './../global/variables' as *;
 
 html {
   font-family: 'Source Sans 3', serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: 'wdth' 100;
+}
+
+.title-generic {
+  text-transform: uppercase;
+  color: $color-highlight;
+  margin-top: 0;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 900;
 }
